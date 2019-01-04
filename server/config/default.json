@@ -1,0 +1,31 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 100,
+    "max": 500
+  },
+  "authentication": {
+    "secret": "c6327ba277214c3ef5bd253e5947fe8653d670b4c7d74bd7dfb30ff44bd0699f74bf483e15d5c79f0bb04896e70f4efaaba2b6191ead8a43b8b506a8ec60e5a3a20b6f09613c6b8bb42cc42a494f0e234870ed381db65a41da5327c21fef2a959822e9b282feeaab0befbf39be53cc2d53766f3a0fbfaa7c58f43624e08e2e9e99b75a507468a1163f385d81e0d989ebb3846b9ec29bbfb0b434f1035ad0a7fe614497b53aae7f91bc1322d288714ef872226f17c6386e99e3e4d0bf8d6c030cf57e93f6528ee28946c585c067f764027132e722541107ffd4f00aa5482dce0349df65e07d37fdb3785ed1a1a1982420de2f403e7ea458bdb429a5940c171387",
+    "strategies": ["jwt", "local"],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://technoplus.com",
+      "subject": "auth",
+      "issuer": "technoplus",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "username",
+      "passwordField": "password"
+    }
+  },
+  "mongodb": "mongodb://localhost:27017/trello"
+}
